@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js Basic</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<!--Declarative Rendering-->
+ <div id="app">
+    {{ title }}
+ </div>
+
+<!--Conditionals Statement-->
+ <div id="app-3">
+     <span v-if="seen">Now You See Me</span>
+ </div>
+
+<!--Loops-->
+ <div id="app-4">
+     <ol>
+         <li v-for="todo in todos">
+             {{todo.text}}
+         </li>
+     </ol>
+ </div>
+
+<!--Js Here-->
+ <script src="./BasicVue.js"></script>
+
+</body>
+</html>

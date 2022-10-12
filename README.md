@@ -2,4 +2,6 @@
 
 <h5> Practice List </h5>
 
-<p> 1)  </p>
+<p> 1)Declarative Rendering </p>
+<p> 2)Conditionals Statement (v-if/v-show) </p>
+<p> 3)Loops (v-for) </p>
