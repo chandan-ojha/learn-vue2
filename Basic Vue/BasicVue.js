@@ -1,8 +1,17 @@
+Vue.config.devtools = true
+
 /* For Declarative Rendering*/
-var app2 = new Vue({
+var app = new Vue({
     el : '#app',
     data: {
         title : "Hello World"
+    }
+})
+
+var app2 = new Vue({
+    el: '#app-2',
+    data: {
+        message: 'You loaded this page on ' + new Date().toLocaleString()
     }
 })
 
@@ -44,5 +53,22 @@ var app6 = new Vue({
     el: '#app-6',
     data: {
         message: 'Write Something..!'
+    }
+})
+
+/*For Composing with Components*/
+Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [
+            {id: 0, text: 'Vegetable'},
+            {id: 1, text: 'Cheese'},
+            {id: 2, text: 'Whatever else humans are supposed to eat'},
+        ]
     }
 })

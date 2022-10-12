@@ -14,6 +14,15 @@
     {{ title }}
 </div>
 
+</br>
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+
 <!--Conditionals Statement-->
 <h3>Conditionals Statement</h3>
 
@@ -45,7 +54,14 @@
     <input v-model="message">
 </div>
 
+<!--Composing with Components-->
+<h3>Composing with Components</h3>
 
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
 
 <!--Js Here-->
  <script src="./BasicVue.js"></script>

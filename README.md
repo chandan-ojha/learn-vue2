@@ -6,3 +6,4 @@
 <p> 2) Conditionals Statement (v-if/v-show) </p>
 <p> 3) Loops (v-for) </p>
 <p> 4) Handling User Input ( v-on, v-model [for two-way data binding] ) </p>
+<p> 5) Composing with Components </p>
