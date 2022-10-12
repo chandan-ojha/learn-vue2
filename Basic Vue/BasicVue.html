@@ -8,23 +8,44 @@
 <body>
 
 <!--Declarative Rendering-->
- <div id="app">
+<h3>Declarative Rendering</h3>
+
+<div id="app">
     {{ title }}
- </div>
+</div>
 
 <!--Conditionals Statement-->
- <div id="app-3">
-     <span v-if="seen">Now You See Me</span>
- </div>
+<h3>Conditionals Statement</h3>
+
+<div id="app-3">
+    <span v-if="seen">Now You See Me</span>
+</div>
 
 <!--Loops-->
- <div id="app-4">
-     <ol>
-         <li v-for="todo in todos">
+<h3>Loops</h3>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
              {{todo.text}}
-         </li>
-     </ol>
- </div>
+        </li>
+    </ol>
+</div>
+
+<!--Handling User Input-->
+<h3>Handling User Input</h3>
+
+<div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+
+
 
 <!--Js Here-->
  <script src="./BasicVue.js"></script>
