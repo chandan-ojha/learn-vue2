@@ -9,3 +9,4 @@
 <p> 5) Composing with Components </p>
 <p> 6) Vue Instance..[Data and Methods] </p>
 <p> 7) Template Syntax </p>
+<p> 8) Computed Properties and Watchers </p>
