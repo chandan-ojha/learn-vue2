@@ -14,8 +14,21 @@ var vm = new Vue({
         }
     }*/
     computed: {
-        fullName : function (){
+        /*fullName : function (){
             return this.firstName +' '+this.lastName
+        }*/
+        fullName : {
+            //getter
+            get: function (){
+                return this.firstName+ ' ' + this.lastName
+            },
+            //setter
+            set: function (newValue){
+                var names = newValue.split(' ')
+                //console.log(names)
+                this.firstName = names[0]
+                this.lastName = names[names.length - 1]
+            }
         }
     }
 })
