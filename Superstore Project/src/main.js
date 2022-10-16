@@ -5,5 +5,6 @@ import './assets/main.css'
 import $ from 'jquery'
 /*Bootstrap*/
 import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 createApp(App).mount('#app')
