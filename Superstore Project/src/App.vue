@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navbar></navbar>
+    <navbar @search="search"></navbar>
     <!--Bootstrap Card-->
     <div class="container">
     <div class="row">
@@ -37,6 +37,11 @@ export default {
     this.items = data
   },
   methods:{
+    search(keyword){
+      this.items = data.filter(item =>{
+        return item.title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
+      })
+    },
     addCartItem(item){
       this.cart.push(item)
     },
