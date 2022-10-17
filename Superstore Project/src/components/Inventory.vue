@@ -1,28 +1,12 @@
 <template>
   <!--Bootstrap Card-->
   <div class="row">
-    <div class="card" style="width: 15rem;">
-      <img src="../assets/images/default-image.jpg" class="card-img-top" alt="...">
+    <div v-for="(item,index) in items" :key="index" class="card" style="width: 15rem;">
+      <img :src="item.photo" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-      <img src="../assets/images/default-image.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-      <img src="../assets/images/default-image.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{item.title}}</h5>
+        <p class="card-text">{{item.price}}</p>
+        <a href="#" class="btn btn-primary">+ add</a>
       </div>
     </div>
   </div>
@@ -30,6 +14,7 @@
 
 <script>
 export default {
+  props: ['items']
 }
 </script>
 
