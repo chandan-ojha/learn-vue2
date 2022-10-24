@@ -1,6 +1,6 @@
 <template>
   <!--Bootstrap Card-->
-  <div class="row">
+  <div v-if="!loading" class="row">
     <div v-for="(item,index) in items" :key="index" class="card" style="width: 15rem;">
       <img :src="item.photo" class="card-img-top" alt="...">
       <div class="card-body">
@@ -10,6 +10,7 @@
       </div>
     </div>
   </div>
+  <h1 v-else>Loading...</h1>
 </template>
 
 <script>
@@ -18,6 +19,7 @@ export default {
   //props: ['items'],
   data(){
     return {
+      loading: true,
       items: []
     }
   },
@@ -29,8 +31,14 @@ export default {
       this.$emit('newItemAdded',item)
     },
     fetchInventory(){
+      var self = this;
       axios.get('http://localhost:3000/items').then(response => {
-        console.log(response);
+      /*setTimeout(function (){
+          self.items = response.data
+          self.loading = false
+        },3000)*/
+        self.items = response.data
+        self.loading = false
       })
     }
   }
