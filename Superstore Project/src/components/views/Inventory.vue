@@ -1,15 +1,19 @@
 <template>
   <!--Bootstrap Card-->
-  <div v-if="!loading" class="row">
-    <div v-for="(item,index) in items" :key="index" class="card" style="width: 15rem;">
-      <img :src="item.photo" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{item.title}}</h5>
-        <p class="card-text">${{item.price}}</p>
-        <a @click="addToCart(item)" class="btn btn-primary">+ add</a>
+  <div v-if="!loading" class="row g-2">
+    <div v-for="(item,index) in items" :key="index" class="card" style="width: 13rem;">
+      <router-link tag="div" :to="{ path: '/item/' + item.id}">
+        <img :src="item.photo" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ item.title }}</h5>
+        </div>
+      </router-link>
+       <div class="card-footer">
+          <span class="card-text">${{ item.price }}</span>
+          <a @click="addToCart(item)" class="btn btn-sm btn-primary float-end">+ add</a>
+        </div>
       </div>
     </div>
-  </div>
   <h1 v-else>Loading...</h1>
 </template>
 
