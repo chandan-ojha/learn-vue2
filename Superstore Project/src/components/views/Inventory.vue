@@ -9,7 +9,7 @@
             <h5 class="card-title text-center">{{ item.title }}</h5>
           </div>
         </router-link>
-       <div class="card-footer">
+        <div class="card-footer">
           <span class="card-text">${{ item.price }}</span>
           <a @click="addToCart(item)" class="btn btn-sm btn-primary float-end">+ add</a>
         </div>
