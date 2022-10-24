@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   //props: ['items'],
   data(){
@@ -20,9 +21,17 @@ export default {
       items: []
     }
   },
+  mounted() {
+    this.fetchInventory();
+  },
   methods: {
     addToCart(item){
       this.$emit('newItemAdded',item)
+    },
+    fetchInventory(){
+      axios.get('http://localhost:3000/items').then(response => {
+        console.log(response);
+      })
     }
   }
 }
