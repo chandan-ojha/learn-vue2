@@ -7,7 +7,10 @@
     <div class="col-sm-6">
       <h4>{{ item.title }}</h4>
       <p>{{ item.description }}</p>
-      <p>{{ item.price }}</p>
+      <div class="card-footer">
+        <span>${{ item.price }}</span>
+        <a @click="addToCart(item)" class="btn btn-sm btn-primary float-end">+ add</a>
+      </div>
     </div>
   </div>
   <h3 v-else>Loading...</h3>
@@ -30,6 +33,9 @@ export default {
       axios.get('http://localhost:3000/item/'+ this.$route.params.id).then(response => {
         self.item = response.data
       })
+    },
+    addToCart(item){
+      this.$store.commit('addToCart',item)
     }
   }
 }
