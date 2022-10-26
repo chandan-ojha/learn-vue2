@@ -38,7 +38,8 @@ export default {
   methods: {
     removeItem(index){
       //console.log(index)
-      this.$emit('itemRemoved', index)
+      /*this.$emit('itemRemoved', index)*/
+      this.$store.commit('removeItem',index)
     }
   }
 }
