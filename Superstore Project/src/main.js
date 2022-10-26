@@ -21,10 +21,7 @@ const router = createRouter({
 import { createStore } from "vuex";
 import { storage } from './store/index.js'
 // Create a new store instance or import from module.
-const store = createStore({
-    /* state, actions, mutations */
-    storage,
-});
+const store = createStore(storage);
 
 const app = createApp(App);
 app.use(router);
