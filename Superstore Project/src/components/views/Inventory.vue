@@ -25,8 +25,13 @@ export default {
   //props: ['items'],
   data(){
     return {
-      loading: true,
-      items: []
+      loading: true
+      /*items: []*/
+    }
+  },
+  computed: {
+    items(){
+      return this.$store.getters.getInventory
     }
   },
   mounted() {
@@ -44,7 +49,8 @@ export default {
           self.items = response.data
           self.loading = false
         },3000)*/
-        self.items = response.data
+        /*self.items = response.data*/
+        self.$store.commit('setInventory',response.data)
         self.loading = false
       })
     }
