@@ -17,6 +17,10 @@
       <span class="item-name">Total</span>
       <span class="item-price float-end">${{totalPrice}}</span>
     </li>
+
+    <li v-if="items.length > 0" class="list-group-item">
+      <button @click="checkout" class="btn btn-block btn-success">Checkout</button>
+    </li>
   </ul>
 </template>
 
@@ -32,7 +36,7 @@ export default {
       this.items.forEach(item => {
         total += parseFloat(item.price)
       })
-      return total;
+      return total.toFixed(2);
     }
   },
   methods: {
@@ -40,6 +44,11 @@ export default {
       //console.log(index)
       /*this.$emit('itemRemoved', index)*/
       this.$store.commit('removeItem',index)
+    },
+    checkout(){
+      if(confirm('Are you sure you want to checkout?')){
+        this.$store.commit('clearCart')
+      }
     }
   }
 }

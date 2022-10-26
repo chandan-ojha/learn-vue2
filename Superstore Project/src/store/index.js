@@ -20,6 +20,9 @@ export const storage = {
         },
         removeItem(state, payload){
             state.cart.splice(payload,1)
+        },
+        clearCart(state){
+            state.cart = []
         }
     }
 }
